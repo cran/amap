@@ -1,7 +1,7 @@
 Dist <- function(x, method="euclidean", nbproc = 2, diag=FALSE, upper=FALSE)
 {
 
-  if(class(x) == "exprSet")
+  if(inherits(x,"exprSet"))
   {
       requireNamespace("Biobase")
       x <- Biobase::exprs(x)

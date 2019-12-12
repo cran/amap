@@ -13,7 +13,7 @@
 hclusterpar <- hcluster <- function (x, method = "euclidean", diag = FALSE, upper = FALSE, link = "complete", members = NULL, nbproc = 2, doubleprecision = TRUE)
 {
 
-  if(class(x) == "exprSet")
+  if(inherits(x, "exprSet"))
     x <- Biobase::exprs(x)
 
   ## take from dist

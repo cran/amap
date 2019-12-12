@@ -30,7 +30,7 @@ function(x, centers, iter.max = 10, nstart = 1,
   if (method == -1) 
     stop("ambiguous distance method")
   
-  if(class(x) == "exprSet")
+  if(inherits(x,"exprSet"))
   {
      requireNamespace("Biobase")
      x <- Biobase::exprs(x)

@@ -42,5 +42,5 @@ namespace hclust_T
 
 #ifndef _AMAP_HCLUST_TEMPLATE_CPP
 #define _AMAP_HCLUST_TEMPLATE_CPP 1
-#include "hclust_T.inl"
+#include "hclust_T.h.h"
 #endif

@@ -382,7 +382,7 @@ namespace amap {
 
 #ifndef _AMAP_DISTANCE_TEMPLATE_CPP 
 #define _AMAP_DISTANCE_TEMPLATE_CPP 1
-#include "distance_T.inl"
+#include "distance_T.h.h"
 #endif
 
 

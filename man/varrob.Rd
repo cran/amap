@@ -41,7 +41,7 @@ A matrix
 
 \references{
   H. Caussinus, S. Hakam, A. Ruiz-Gazen
-  Projections r\'ev\'elatrices contr\^ol\'ees: groupements et structures
+  Projections revelatrices controlees: groupements et structures
   diverses.
   2002, to appear in Rev. Statist. Appli.
 }

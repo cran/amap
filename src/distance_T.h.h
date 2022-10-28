@@ -2,7 +2,7 @@
  * \brief all functions requiered for R dist function and C hcluster function.
  *
  *  \date Created: probably in 1995
- *  \date Last modified: Time-stamp: <2014-03-01 17:21:54 antoine>
+ *  \date Last modified: Time-stamp: <2022-10-25 22:01:11 (antoine)>
  *
  *  \author R core members, and lately: Antoine Lucas 
  *
@@ -169,7 +169,7 @@ template<class T> T  distance_T<T>::R_maximum(vecteur<double> & x, vecteur<doubl
 // Distance manhattan (i.e. sum of abs difference )
 //
 // manhattan distance between 2 vectors a,b is
-//  d = sum_i | a_i - b_i |
+//  d = sum_i | a_i - b_i |
 //
 // This function compute distance between 2 vectors x[i1,] & y[i2,]
 // x and y are matrix; we use here only line i1 from x and

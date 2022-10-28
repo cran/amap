@@ -135,7 +135,7 @@ y_i}{% frac: 2nd part
   \emph{Multivariate Analysis.} London: Academic Press.
 
   Wikipedia
-  \url{http://en.wikipedia.org/wiki/Kendall_tau_distance}
+  \url{https://en.wikipedia.org/wiki/Kendall_tau_distance}
   
 }
 \note{Multi-thread (parallelisation) is disable on Windows.}

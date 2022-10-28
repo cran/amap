@@ -1,5 +1,6 @@
 6425782242cf3e5a5186b98d2d4b5a99 *Changes
-63b3d55406d9ea8c983ac16b83a4c37e *DESCRIPTION
+0510d64fd90081b76080e59421d85b2e *DESCRIPTION
+9b87025f779cbf59c4e611807d010a61 *INDEX
 da0fdd33fcfc8e9eb6b6989d369a0b9e *NAMESPACE
 57c0c20655ec771b183c3d07eeaf7d1d *R/Kmeans.R
 0e4a6fb503a0b193302823e0d6cf6039 *R/acp.R
@@ -9,7 +10,7 @@ cecc24888d4ff760b46111ed6a0a3fa7 *R/acprob.R
 81e76ff58e0445d57ea446ed81e30284 *R/dist.R
 94956050884b1b8c5d0edeacfb45b469 *R/hcluster.R
 e4aa724df4d3b29253d77c03e293fe97 *R/pop.R
-1599dc5b97660678b361f80a9d016558 *build/vignette.rds
+abc83c5d83cc5b7845b9928b0a27008b *build/vignette.rds
 364a43413a10df0ffe981f35aeddf37f *cleanup
 120b6938b77c8c83bc1db2397f25a4b6 *data/lubisch.tab.gz
 de314ddf28c269b98ad9ff281ed6f860 *demo/00Index
@@ -17,7 +18,7 @@ ffec123e2067afe88ddc15000edd6b43 *demo/amap.R
 e0891bc3830d1d85ac186263199e8a55 *exec/amap.php
 edac769262ab42d201162cc0d6763a7f *inst/doc/amap.R
 1f6194916110fe560cbdd55fc1b13ae2 *inst/doc/amap.Rnw
-ca00c7d0149f82b8355c2f890e756958 *inst/doc/amap.pdf
+af66090dba991e0a2fe6cf89a233f8b6 *inst/doc/amap.pdf
 1f6194916110fe560cbdd55fc1b13ae2 *inst/doc/vignettes/amap.Rnw
 b83d1692381d779844bebf1efe5baa71 *inst/doc/vignettes/amap.bib
 fd3bdd9a56b153e377e4e5fc174a4e74 *inst/po/fr/LC_MESSAGES/R-amap.mo
@@ -29,12 +30,12 @@ fd3bdd9a56b153e377e4e5fc174a4e74 *inst/po/po/fr/LC_MESSAGES/R-amap.mo
 6ecbc9c9dd34aa56ef036d1c763c3b2c *man/afc.Rd
 2b90d07a26ba121b889dcf626c4c8448 *man/burt.Rd
 2d9bc5468cedc3cd71e6c58cdb33f2a2 *man/diss.Rd
-7fbbed58f95e74db99c3d2e9b399568c *man/dist.Rd
+ee59491deb0e22db9ba5ee708c526de0 *man/dist.Rd
 c11e6b2a4cdb2c73113a471d86087891 *man/hcluster.Rd
 30f468cb29bf1a593ff62bae61869b63 *man/lubisch.Rd
 92f1f0cb76b1a8f87ef1f8c3df08e9d1 *man/plot.acp.Rd
 bf8a862477275a5dd74f95a838688400 *man/pop.Rd
-2308f6d7d1afdeaf353c6e5ea11b8abc *man/varrob.Rd
+56f9bc4e2dafcb8a7034abd91fcab9a1 *man/varrob.Rd
 66c5107ea07d7c2b3ab59d157981d765 *po/R-amap.pot
 84e38e6af2183dfef78f10fc4a27f4a2 *po/R-fr.po
 1d80eada7a6d4ca459e23dd400949c8d *src/Makevars.in
@@ -45,7 +46,7 @@ bf8a862477275a5dd74f95a838688400 *man/pop.Rd
 142de036d003824ac4eb1bce747f568f *src/distance.cpp
 0bbf14c8b648739a6f53b5c8e0146327 *src/distance.h
 53aa5c429e2a24a27a24fc8bb9f6b212 *src/distance_T.h
-1d3f1cdcb72819f90c04d30ef7f48642 *src/distance_T.h.h
+761948004f0bf73ff126147b54054aa9 *src/distance_T.h.h
 37aa2ae8966ad80a389c519d22de0fcb *src/hclust.cpp
 2b7cecb079de38b10f21504f64a04fb7 *src/hclust.h
 b8ddd602381bdc2611e1333559995c15 *src/hclust_T.h
@@ -56,9 +57,9 @@ d5cb712175f94b8943fe835c9c88547e *src/kmeans.cpp
 2143f5b1097f085d61b4f634046a1b04 *src/matrice.cpp
 f1c9d082d35492fb10068d6c0588a258 *src/matrice.h
 b826a1a326c5d0c562f4fe6e35f0390f *src/matriceTriangle.h
-19966c47a718ba08b6f94b1b6de92ba4 *src/pop.f
+39a55f456b8b382be81892274b370a90 *src/pop.f
 968aadd85e44a2b47a32b1f8bd0bc574 *src/smartPtr.h
-f51894bff77610df49cc218d1839796f *tests/amap-test.R
-a186fef18421275ab5a3cacd379abb55 *tests/amap-test.Rout.save
+c4b17a3e05886cd0d0a14d367dad80d2 *tests/amap-test.R
+0050303e84ccaecee3999145421334b4 *tests/amap-test.Rout.save
 1f6194916110fe560cbdd55fc1b13ae2 *vignettes/amap.Rnw
 cf3e3391344ea95f1711a432da3f4fe4 *vignettes/amap.bib

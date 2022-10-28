@@ -358,19 +358,28 @@ C
               J1I1        = J1 + (I1-1) * N
               RANG        = 1
 C
-              DO 50 J2 = 1 , N
-                  DO 50 I2 = 1 , J2-1
+              DO J2 = 1 , N
+                  DO I2 = 1 , J2-1
                       I2J2   = I2 + (J2-1) * N
                       IF ( TRIABS .NE. 0 ) THEN
                           CDIF   = ABS(COUTS(I2J2)) - ABS(COUTS(I1J1))
                       ELSE
                           CDIF   =     COUTS(I2J2)  -     COUTS(I1J1)
                       ENDIF
-                      IF ( CDIF ) 50 , 30 , 40
+C     IF ( CDIF ) 50 , 30 , 40
+                      IF (CDIF < 0) THEN
+                         GOTO 50
+                      ELSE IF (CDIF == 0) THEN
+                         GOTO 30
+                      ELSE
+                         GOTO 40
+                      ENDIF
 30                        IF ( I1J1 .GE. I2J2 ) GOTO 50
 40                        RANG   = RANG + 1
 50                    CONTINUE
 C
+                  END DO
+              END DO
               JK     = 1
 60                FINJ   = N*JK - (JK*(JK+1))/2
                   IF ( RANG .GT. FINJ ) THEN
@@ -650,11 +659,28 @@ C     BOUCLE SUR LES INDICES INITIAUX COHERENTS AVEC YIJ , YIK , YJK
 C     --------------------------------------------------------------
       DO 100 KK = 1 , N
 C
-          IF ( II - KK ) 10 , 100 , 20
+C     IF ( II - KK ) 10 , 100 , 20
+         IF ((II - KK) < 0 ) THEN
+           GOTO 10
+        ELSE IF (( II - KK) == 0) THEN
+           GOTO 100
+        ELSE
+           GOTO 20
+        END IF
+        
+            
 10        YIK    = Y ( RENUM ( II + (KK-1)*N ) )
           GOTO 30
 20        YIK    = Y ( RENUM ( KK + (II-1)*N ) )
-30        IF ( JJ - KK ) 40 , 100 , 50
+C 30       IF ( JJ - KK ) 40 , 100 , 50
+ 30       IF ( ( JJ - KK ) < 0 ) THEN
+             GOTO 40
+          ELSE IF  (( JJ - KK ) == 0 ) THEN
+             GOTO 100
+          ELSE
+             GOTO 50
+          ENDIF
+          
 40        YJK    = Y ( RENUM ( JJ + (KK-1)*N ) )
           GOTO 60
 50        YJK    = Y ( RENUM ( KK + (JJ-1)*N ) )

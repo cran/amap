@@ -1,6 +1,6 @@
 
-R Under development (unstable) (2019-04-21 r76409) -- "Unsuffered Consequences"
-Copyright (C) 2019 The R Foundation for Statistical Computing
+R Under development (unstable) (2022-10-23 r83164) -- "Unsuffered Consequences"
+Copyright (C) 2022 The R Foundation for Statistical Computing
 Platform: x86_64-pc-linux-gnu (64-bit)
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
@@ -6429,6 +6429,30 @@ Eigen values:
 > 
 > 
 > 
+> d <-2 * matrix(c(9,  8,  5,  7,  7,  2
++      ,  8,  9,  2,  5,  1,  7
++      ,  5,  2,  9,  8,  7,  1
++      ,  7,  5,  8,  9,  3,  2
++      ,  7,  1,  7,  3,  9,  6
++      ,  2,  7,  1,  2,  6,  9),ncol=6,byrow=TRUE) - 9
+> 
+> pop(d)
+Upper bound     (half cost)   : 39 
+Final partition (half cost)   : 25 
+Number of classes             : 2 
+Forward move count            : 124 
+Backward move count           : 124 
+Constraints evaluations count : 248 
+Number of local optima        : 2 
+
+  Individual class
+1          1     1
+2          2     2
+3          3     1
+4          4     1
+5          5     1
+6          6     2
+> 
 > 
 > 
 > 
@@ -6436,4 +6460,4 @@ Eigen values:
 > 
 > proc.time()
    user  system elapsed 
-  0.441   0.145   0.518 
+  0.222   0.224   0.418 

@@ -35,7 +35,7 @@ template<class T> class SmartPtr {
       data = (T*) calloc(size, sizeof(T));
       if ( data == 0) {
 	int sizeInMo = size * sizeof(T) / 1024 / 1024;
-	error("AMAP: cannot allocate %d Mo", sizeInMo);
+	Rf_error("AMAP: cannot allocate %d Mo", sizeInMo);
       }
     } else {
       data = 0;

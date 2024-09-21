@@ -823,7 +823,7 @@ template<class T>  void distance_T<T>::getDistfunction(int method,distfunction& 
       break;			
     default:
       {
-	error("distance(): invalid distance");
+	Rf_error("distance(): invalid distance");
 	distfun = R_euclidean;
       }
 }

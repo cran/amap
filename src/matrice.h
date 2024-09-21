@@ -41,7 +41,7 @@ namespace amap {
      */
     virtual  T & operator[] (int index) {
       if (index >= vectorSize) {
-	error("vecteur::operator[]: out of bound %d - %d", index, vectorSize);
+	Rf_error("vecteur::operator[]: out of bound %d - %d", index, vectorSize);
       }
 
       return (myMatrice)[indexFirstData + (index * stepByData)];
@@ -119,7 +119,7 @@ namespace amap {
      */
     vecteur<T> getRow(int index) {
       if (index >= nrow) {
-	error("matrice::getRow(): out of bound %d - %d", index, nrow);
+	Rf_error("matrice::getRow(): out of bound %d - %d", index, nrow);
       }
       vecteur<T> myRow (*this, index, nrow, ncol);
       return myRow;
@@ -131,7 +131,7 @@ namespace amap {
      */
     vecteur<T> getCol(int index) {
       if (index >= ncol) {
-	error("matrice::getCol(): out of bound %d - %d", index, ncol);
+	Rf_error("matrice::getCol(): out of bound %d - %d", index, ncol);
       }
       vecteur<T> myCol (*this, index*nrow, 1, nrow);
       return myCol;

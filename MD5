@@ -1,5 +1,5 @@
 6425782242cf3e5a5186b98d2d4b5a99 *Changes
-0510d64fd90081b76080e59421d85b2e *DESCRIPTION
+e495631d00cc0026fb9b11060b777b2d *DESCRIPTION
 9b87025f779cbf59c4e611807d010a61 *INDEX
 da0fdd33fcfc8e9eb6b6989d369a0b9e *NAMESPACE
 57c0c20655ec771b183c3d07eeaf7d1d *R/Kmeans.R
@@ -10,7 +10,7 @@ cecc24888d4ff760b46111ed6a0a3fa7 *R/acprob.R
 81e76ff58e0445d57ea446ed81e30284 *R/dist.R
 94956050884b1b8c5d0edeacfb45b469 *R/hcluster.R
 e4aa724df4d3b29253d77c03e293fe97 *R/pop.R
-abc83c5d83cc5b7845b9928b0a27008b *build/vignette.rds
+4a883e195ca77e0b96c1074e374b78c4 *build/vignette.rds
 364a43413a10df0ffe981f35aeddf37f *cleanup
 120b6938b77c8c83bc1db2397f25a4b6 *data/lubisch.tab.gz
 de314ddf28c269b98ad9ff281ed6f860 *demo/00Index
@@ -18,7 +18,7 @@ ffec123e2067afe88ddc15000edd6b43 *demo/amap.R
 e0891bc3830d1d85ac186263199e8a55 *exec/amap.php
 edac769262ab42d201162cc0d6763a7f *inst/doc/amap.R
 1f6194916110fe560cbdd55fc1b13ae2 *inst/doc/amap.Rnw
-af66090dba991e0a2fe6cf89a233f8b6 *inst/doc/amap.pdf
+adecc4d4c5ee20e95165e5664672e6c1 *inst/doc/amap.pdf
 1f6194916110fe560cbdd55fc1b13ae2 *inst/doc/vignettes/amap.Rnw
 b83d1692381d779844bebf1efe5baa71 *inst/doc/vignettes/amap.bib
 fd3bdd9a56b153e377e4e5fc174a4e74 *inst/po/fr/LC_MESSAGES/R-amap.mo
@@ -46,7 +46,7 @@ bf8a862477275a5dd74f95a838688400 *man/pop.Rd
 142de036d003824ac4eb1bce747f568f *src/distance.cpp
 0bbf14c8b648739a6f53b5c8e0146327 *src/distance.h
 53aa5c429e2a24a27a24fc8bb9f6b212 *src/distance_T.h
-761948004f0bf73ff126147b54054aa9 *src/distance_T.h.h
+734dfd8a1d348d68ce7bdb61ed135a6f *src/distance_T.h.h
 37aa2ae8966ad80a389c519d22de0fcb *src/hclust.cpp
 2b7cecb079de38b10f21504f64a04fb7 *src/hclust.h
 b8ddd602381bdc2611e1333559995c15 *src/hclust_T.h
@@ -55,10 +55,10 @@ d1d5ebf1ebaaeff126b32a8a43c4f2a3 *src/init.c
 d5cb712175f94b8943fe835c9c88547e *src/kmeans.cpp
 863538393c686c98fdc9e9c297bf4513 *src/kmeans.h
 2143f5b1097f085d61b4f634046a1b04 *src/matrice.cpp
-f1c9d082d35492fb10068d6c0588a258 *src/matrice.h
+09b93bef66758feb9c3f8ba302cce57e *src/matrice.h
 b826a1a326c5d0c562f4fe6e35f0390f *src/matriceTriangle.h
 39a55f456b8b382be81892274b370a90 *src/pop.f
-968aadd85e44a2b47a32b1f8bd0bc574 *src/smartPtr.h
+2873c427796ee55eec78c45d0044dc82 *src/smartPtr.h
 c4b17a3e05886cd0d0a14d367dad80d2 *tests/amap-test.R
 0050303e84ccaecee3999145421334b4 *tests/amap-test.Rout.save
 1f6194916110fe560cbdd55fc1b13ae2 *vignettes/amap.Rnw

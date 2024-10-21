@@ -30,7 +30,7 @@ hcluster(x, method = "euclidean", diag = FALSE, upper = FALSE,
     be (an unambiguous abbreviation of) one of
     \code{"ward"}, \code{"single"}, \code{"complete"},
     \code{"average"}, \code{"mcquitty"}, \code{"median"} or
-    \code{"centroid"},\code{"centroid2"}.}
+    \code{"centroid"},\code{"centroid2"}, \code{"ward.d2"}.}
   
   \item{members}{\code{NULL} or a vector with length size of \code{d}.}
   \item{nbproc}{integer, number of subprocess for parallelization [Linux

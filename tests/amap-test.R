@@ -9,13 +9,13 @@ data(USArrests)
                "binary","pearson","correlation","spearman","kendall",
                "abspearson","abscorrelation")
   METHODSLINKS <- c("ward", "single", "complete", "average", "mcquitty", 
-                    "median", "centroid","centroid2")
+                    "median", "centroid","centroid2","ward.D2")
 
 
 
 for (mymethod in METHODS) {		    
     d = Dist(USArrests, method = mymethod)
-    print(d)
+  
     k  = Kmeans(USArrests, centers = 4, method = mymethod)
     print(k)
     for (mylink in METHODSLINKS)
@@ -25,6 +25,26 @@ for (mymethod in METHODS) {
 	hc <- hcluster(USArrests,link = mylink, method =  mymethod, nbproc=4)
 	print(hc)
     }
+}
+
+  COMMONDIST <- c("euclidean", "maximum", "manhattan", "canberra", 
+               "binary")
+  COMMONLINKS <- c( "single", "complete", "average", "mcquitty", 
+                    "median", "centroid","ward.D2")
+
+for (mymethod in COMMONDIST) {		    
+   d = dist(USArrests,method = mymethod)
+   d2 = Dist(USArrests,method = mymethod)
+   cat("test",mymethod)
+   stopifnot(floor(d * 1000) == floor(d2*1000))
+}
+d = dist(USArrests)
+for(mylink in COMMONLINKS){
+  cat("test",mylink)
+  h = hclust(d, method = mylink)
+  hc = hcluster(USArrests,link = mylink)
+  stopifnot(h$order == hc$order)
+  stopifnot(floor(h$height * 1000) == floor(hc$height*1000))
 }
 
 hc <- hcluster(USArrests, nbproc=1)

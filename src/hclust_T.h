@@ -8,7 +8,7 @@ namespace hclust_T
 {
 
 
-  enum {WARD=1,SINGLE,COMPLETE,AVERAGE,MCQUITTY,MEDIAN,CENTROID,CENTROID2};
+  enum {WARD=1,SINGLE,COMPLETE,AVERAGE,MCQUITTY,MEDIAN,CENTROID,CENTROID2,WARDD2};
 
 
   template <class T> void hcluster(double *x, int *nr, int *nc, 
@@ -32,7 +32,7 @@ namespace hclust_T
    */
   inline int ioffst(int n,int i,int j)
   {
-    return j+i*n-(i+1)*(i+2)/2 ;
+    return j>i ? j+i*n-(i+1)*(i+2)/2 : ioffst(n,j,i);
   }
 
 }

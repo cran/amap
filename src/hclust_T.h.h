@@ -11,6 +11,7 @@
 
 #include "R.h"
 #include <new>
+#include <limits>
 
 namespace hclust_T
 {
@@ -72,16 +73,18 @@ namespace hclust_T
 				 int *method,int *n,int *len, int *iopt ,int *ia , 
 				 int *ib,int *iorder,double *crit,double *membr,T *diss,int *result)
   {
-    int im,jm,jj,i,j,ncl,ind,i2,j2,k,ind1,ind2,ind3;
+    int im=0;
+    int jm=0;
+    int jj,ncl,ind,i2,j2,k,ind1,ind2,ind3;
     double inf,dmin,x,xx;
-    SmartPtr<int> nn (*n);
     SmartPtr<int> items (0);
-    SmartPtr<double> disnn(*n);
-    SmartPtr<short int> flag(*n);
+    // nn , disnn : for each cluster i, disnn{i] is shortest cluster j = nn[i] to i.
+    SmartPtr<int> nn (*n);
+    SmartPtr<double> disnn(*n); 
+    SmartPtr<bool> flag(*n);
 
     int h,idx1,idxitem1,idx2;
 
-    
     *result = 1;
     
 
@@ -91,13 +94,13 @@ namespace hclust_T
       }
     
     /* Initialisation */
-    for ( i=0; i<*n ; i++)
+    for (int i=0; i<*n ; i++)
       {
-	flag[i]=1;
+	flag[i]=true;
 	idxitem1=i;
 	if(items.get() != NULL) 
 	  {
-	    for ( j=0; j<nc ; j++) 
+	    for (int j=0; j<nc ; j++) 
 	      {
 		items[idxitem1]=1;  /* only one item per cluster and per coordinate for iopt==8*/
 		idxitem1+=nr;
@@ -106,18 +109,24 @@ namespace hclust_T
       }
     
     ncl=*n;
-    inf= 1e20;
-    
+    inf= std::numeric_limits<T>::max();
+
+    if(*iopt==WARDD2) {
+      for(int i = 0 ; i < *len; i++){
+	diss[i] = diss[i] * diss[i];
+      }
+    }
+   
     /*
      * Carry out an agglomeration - first create list of NNs
      */
-    for ( i=0; i<(*n-1) ; i++)
+    for (int i=0; i<(*n-1) ; i++)
       {
 	dmin=inf;
-	for (j=i+1; j<*n; j++)
+	for (int j=i+1; j<*n; j++)
 	  {
 	    ind = ioffst(*n,i,j);
-	    if (diss[ind]< dmin)
+	    if (diss[ind]<= dmin)
 	      {
 		dmin = diss[ind];
 		jm=j;
@@ -137,21 +146,17 @@ namespace hclust_T
 	 */
 			
 	dmin = inf;
-	for ( i=0; i<(*n-1) ; i++)
+	for (int i=0; i<(*n-1) ; i++)
 	  {
-	    if( flag[i] )
+	    if( flag[i]  && disnn[i] < dmin )
 	      {
-					
-		if (disnn[i] < dmin )
-		  {
-		    dmin = disnn[i];
-		    im=i;
-		    jm=nn[i];
-		  }
+		dmin = disnn[i];
+		im=i;
+		jm=nn[i];
 	      }
 	  }
  
-	ncl = ncl-1;
+
 	
 	/*
 	 * This allows an agglomeration to be carried out.
@@ -159,15 +164,23 @@ namespace hclust_T
 	 */
 	i2=MIN (im,jm);
 	j2=MAX (im,jm);
-	ia[*n-ncl-1]=i2+1;
-	ib[*n-ncl-1]=j2+1;
-	crit[*n-ncl-1]=dmin;
+	ia[*n-ncl]=i2+1;
+	ib[*n-ncl]=j2+1;
+
+
 	
+	if (*iopt == WARDD2)
+	  {
+	    dmin = sqrt(dmin);
+	  }
+	
+	crit[*n-ncl]=dmin;
+	ncl--;	
 	
 	/*
 	 * Update dissimilarities from new cluster.
 	 */
-	flag[j2]=0;
+	flag[j2]=false;
 	dmin=inf;
 	jj=0;
 
@@ -209,15 +222,8 @@ namespace hclust_T
 	      {		
 		if(flag[k] && (k != i2) )
 		  {
-		    if (i2 < k)
-		      {
-			ind1 = ioffst(*n,i2,k);
-		      }
-		    else
-		      {
-			ind1 = ioffst(*n,k,i2);
-		      }
-
+		    ind1 = ioffst(*n,i2,k);
+		    
 		    if( (i2 < k) && ( diss[ind1] < dmin ) )
 		      {
 			dmin = diss[ind1];
@@ -237,23 +243,14 @@ namespace hclust_T
 	    if(flag[k] && (k != i2) )
 	      {
 		x =  membr[i2] + membr[j2] + membr[k];
-		if (i2 < k)
-		  {
-		    ind1 = ioffst(*n,i2,k);
-		  }
-		else
-		  {
-		    ind1 = ioffst(*n,k,i2);
-		  }
-		if (j2 < k)
-		  {
-		    ind2 = ioffst(*n,j2,k);
-		  }
-		else
-		  {
-		    ind2 = ioffst(*n,k,j2);
-		  }
+
+		ind1 = ioffst(*n,i2,k);
+		
+		
+		ind2 = ioffst(*n,j2,k);
+		
 		ind3=ioffst(*n,i2,j2);
+		
 		xx=diss[ind3];
 		/*
 		 * Gi & Gj are agglomerated => Gii
@@ -275,6 +272,7 @@ namespace hclust_T
 		     * WARD'S MINIMUM VARIANCE METHOD - IOPT=1.
 		     */	      
 		  case WARD: 
+		  case WARDD2: 
 		    {
 		      diss[ind1] = (membr[i2]+membr[k])* diss[ind1] + 
 			(membr[j2]+membr[k])* diss[ind2] - 
@@ -289,7 +287,9 @@ namespace hclust_T
 		    /*
 		     * COMPLETE LINK METHOD - IOPT=3.
 		     */
-		  case COMPLETE: diss[ind1] = MAX (diss[ind1],diss[ind2]); break; 
+		  case COMPLETE:
+		    diss[ind1] = MAX (diss[ind1],diss[ind2]);
+		    break; 
 		    /*
 		     * AVERAGE LINK (OR GROUP AVERAGE) METHOD - IOPT=4.
 		     */
@@ -319,15 +319,19 @@ namespace hclust_T
 		  } /* end switch */
 					
 	
-		if( (i2 < k) && ( diss[ind1] < dmin ) )
-		  {
-		    dmin = diss[ind1];
-		    jj=k;
+		if(i2 < k) {
+		    if( diss[ind1] < dmin ) 
+		      {
+			dmin = diss[ind1];
+			jj=k;
+		      }
 		  }
-		if( (i2 > k) && (nn[k]!=j2) && ( diss[ind1] < disnn[k] ) )
-		  {
-		    disnn[k]=diss[ind1];
-		    nn[k]=i2;
+		  else{
+		    if( diss[ind1] < disnn[k] )
+		      {
+			disnn[k]=diss[ind1];
+			nn[k]=i2;
+		      }
 		  }
 	      } /* 800 */
 	  }
@@ -340,22 +344,23 @@ namespace hclust_T
 	 *  Update list of NNs insofar as this is required.
 	 */
 	
-	for ( i=0; i< (*n-1) ; i++)
+	for (int i=0; i< (*n-1) ; i++)
 	  {
 	    if( flag[i] && ((nn[i] == i2 ) || (nn[i] == j2) ) )
 	      {
 		dmin = inf;
-		for  ( j=i+1; j< *n ; j++)
+		for  (int j=i+1; j< *n ; j++)
 		  {
 		    ind= ioffst(*n,i,j);
-		    if(flag[j] && (i != j) && (diss[ind] < dmin) )
+		    if(flag[j]  && (diss[ind] < dmin) )
 		      {
 			dmin =diss[ind];
 			jj=j;
 		      }
-		    nn[i] = jj;
-		    disnn[i] = dmin;
+		  
 		  }
+		nn[i] = jj;
+		disnn[i] = dmin;
 	      }
 	  }
 	/*printf("%d/%d\n",ncl,*n);*/
@@ -373,7 +378,7 @@ namespace hclust_T
      * Cette boucle devrait etre evitee...
      */
   
-    for (i=0; i< *n; i++ ) 
+    for (int i=0; i< *n; i++ ) 
       {
 	ia[i]= iia[i];
 	ib[i]= iib[i];

@@ -837,7 +837,7 @@ template<class T>  void distance_T<T>::getDistfunction(int method,distfunction& 
 template <class T> void* distance_T<T>::thread_dist(void* arguments_void)
 {
 
-  int nbprocess,nr,nc,i,j,dc,ij;
+  int nbprocess,nr,nc,i,j,dc;
   T_argument * arguments = static_cast<T_argument*>(arguments_void); 
   T * d;
   double * x;
@@ -900,7 +900,7 @@ template <class T> void* distance_T<T>::thread_dist(void* arguments_void)
 	  vecteur<T> distRow = distMatrice.getRow(j);
 	  vecteur<double> rowJ = myMatrice.getRow(j);
 
-	  ij = (2 * (nr-dc) - j +1) * (j) /2 ;
+	  //ij = (2 * (nr-dc) - j +1) * (j) /2 ;
 	  for(i = j+dc ; i < nr ; i++)
 	    {
 	      vecteur<double> rowI = myMatrice.getRow(i);

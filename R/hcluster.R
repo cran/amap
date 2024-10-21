@@ -33,7 +33,7 @@ hclusterpar <- hcluster <- function (x, method = "euclidean", diag = FALSE, uppe
   
                                         #take from hclust
   METHODSLINKS <- c("ward", "single", "complete", "average", "mcquitty", 
-                    "median", "centroid","centroid2")
+                    "median", "centroid","centroid2", "ward.D2")
   
   link <- pmatch(link, METHODSLINKS)
   if (is.na(link)) 

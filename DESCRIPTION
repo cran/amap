@@ -1,6 +1,6 @@
 Package: amap
-Version: 0.8-19.1
-Date: 2022-10-25
+Version: 0.8-20
+Date: 2024-10-19
 Title: Another Multidimensional Analysis Package
 Authors@R: person(given = "Antoine",
                   family = "Lucas",
@@ -11,9 +11,9 @@ Suggests: Biobase
 Description: Tools for Clustering and Principal Component Analysis
         (With robust methods, and parallelized functions).
 License: GPL
-Packaged: 2024-09-21 07:38:50 UTC; hornik
+Packaged: 2024-10-20 19:10:38 UTC; antoine
 Repository: CRAN
-Date/Publication: 2024-09-21 07:49:48 UTC
+Date/Publication: 2024-10-21 12:40:07 UTC
 NeedsCompilation: yes
 Author: Antoine Lucas [aut, cre]
 Maintainer: Antoine Lucas <antoinelucas@gmail.com>

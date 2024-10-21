@@ -1,5 +1,5 @@
 6425782242cf3e5a5186b98d2d4b5a99 *Changes
-e495631d00cc0026fb9b11060b777b2d *DESCRIPTION
+ef9fd839132915745c21e162ff3fd2ae *DESCRIPTION
 9b87025f779cbf59c4e611807d010a61 *INDEX
 da0fdd33fcfc8e9eb6b6989d369a0b9e *NAMESPACE
 57c0c20655ec771b183c3d07eeaf7d1d *R/Kmeans.R
@@ -8,9 +8,9 @@ cecc24888d4ff760b46111ed6a0a3fa7 *R/acprob.R
 96c149c0e68331643ff09c695c7c931e *R/burt.R
 840308485d4b9e57ff7807872333f374 *R/diss.R
 81e76ff58e0445d57ea446ed81e30284 *R/dist.R
-94956050884b1b8c5d0edeacfb45b469 *R/hcluster.R
+544f160395d17813a870dbaaefabd77a *R/hcluster.R
 e4aa724df4d3b29253d77c03e293fe97 *R/pop.R
-4a883e195ca77e0b96c1074e374b78c4 *build/vignette.rds
+8a9f723061e683f36295df485ea418ef *build/vignette.rds
 364a43413a10df0ffe981f35aeddf37f *cleanup
 120b6938b77c8c83bc1db2397f25a4b6 *data/lubisch.tab.gz
 de314ddf28c269b98ad9ff281ed6f860 *demo/00Index
@@ -18,7 +18,7 @@ ffec123e2067afe88ddc15000edd6b43 *demo/amap.R
 e0891bc3830d1d85ac186263199e8a55 *exec/amap.php
 edac769262ab42d201162cc0d6763a7f *inst/doc/amap.R
 1f6194916110fe560cbdd55fc1b13ae2 *inst/doc/amap.Rnw
-adecc4d4c5ee20e95165e5664672e6c1 *inst/doc/amap.pdf
+61277c12f44b384a82f2f4d1aa4845bd *inst/doc/amap.pdf
 1f6194916110fe560cbdd55fc1b13ae2 *inst/doc/vignettes/amap.Rnw
 b83d1692381d779844bebf1efe5baa71 *inst/doc/vignettes/amap.bib
 fd3bdd9a56b153e377e4e5fc174a4e74 *inst/po/fr/LC_MESSAGES/R-amap.mo
@@ -31,7 +31,7 @@ fd3bdd9a56b153e377e4e5fc174a4e74 *inst/po/po/fr/LC_MESSAGES/R-amap.mo
 2b90d07a26ba121b889dcf626c4c8448 *man/burt.Rd
 2d9bc5468cedc3cd71e6c58cdb33f2a2 *man/diss.Rd
 ee59491deb0e22db9ba5ee708c526de0 *man/dist.Rd
-c11e6b2a4cdb2c73113a471d86087891 *man/hcluster.Rd
+4d99e7504606d44fa8dd4d146d664fbd *man/hcluster.Rd
 30f468cb29bf1a593ff62bae61869b63 *man/lubisch.Rd
 92f1f0cb76b1a8f87ef1f8c3df08e9d1 *man/plot.acp.Rd
 bf8a862477275a5dd74f95a838688400 *man/pop.Rd
@@ -46,11 +46,11 @@ bf8a862477275a5dd74f95a838688400 *man/pop.Rd
 142de036d003824ac4eb1bce747f568f *src/distance.cpp
 0bbf14c8b648739a6f53b5c8e0146327 *src/distance.h
 53aa5c429e2a24a27a24fc8bb9f6b212 *src/distance_T.h
-734dfd8a1d348d68ce7bdb61ed135a6f *src/distance_T.h.h
+e03ebb3a6b559318b9fd3145b03dd528 *src/distance_T.h.h
 37aa2ae8966ad80a389c519d22de0fcb *src/hclust.cpp
 2b7cecb079de38b10f21504f64a04fb7 *src/hclust.h
-b8ddd602381bdc2611e1333559995c15 *src/hclust_T.h
-3a86e75052c29598c5cb883afcd41ba7 *src/hclust_T.h.h
+f121bed16ec5c37ce6708fdfaee48e74 *src/hclust_T.h
+15dcdf7a6eef6170ce05013788a02421 *src/hclust_T.h.h
 d1d5ebf1ebaaeff126b32a8a43c4f2a3 *src/init.c
 d5cb712175f94b8943fe835c9c88547e *src/kmeans.cpp
 863538393c686c98fdc9e9c297bf4513 *src/kmeans.h
@@ -59,7 +59,7 @@ d5cb712175f94b8943fe835c9c88547e *src/kmeans.cpp
 b826a1a326c5d0c562f4fe6e35f0390f *src/matriceTriangle.h
 39a55f456b8b382be81892274b370a90 *src/pop.f
 2873c427796ee55eec78c45d0044dc82 *src/smartPtr.h
-c4b17a3e05886cd0d0a14d367dad80d2 *tests/amap-test.R
-0050303e84ccaecee3999145421334b4 *tests/amap-test.Rout.save
+acd15ee3b15bf48c2ef14ce3c261f6a8 *tests/amap-test.R
+0ddaa5cd50906e8c9819b3ef8f3bcda7 *tests/amap-test.Rout.save
 1f6194916110fe560cbdd55fc1b13ae2 *vignettes/amap.Rnw
 cf3e3391344ea95f1711a432da3f4fe4 *vignettes/amap.bib
